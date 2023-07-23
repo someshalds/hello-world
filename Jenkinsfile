@@ -33,7 +33,7 @@ pipeline
       
         always
         {
-          emailext body: 'summery and jenkins are the basci things ', subject: 'pipeline status', to: 'sudeekshaconstructions@gmail.com'
+          emailext body: 'please attach the documents', subject: 'read the data', to: 'someshsalapareddy1995@gmail.com'
         }
     }
 }    

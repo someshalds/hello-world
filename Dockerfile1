@@ -1,0 +1,17 @@
+pipeline{
+     agent any
+     stages{
+         
+         stage('Git clone'){
+             
+            steps{
+                git 'https://github.com/someshalds/hello-world.git'
+            }
+         }
+         stage('Create Dockerimage'){
+             steps{
+                 sh 'docker build -t someshalds/someshdocker:latest .'
+             }
+         }
+     }
+}

@@ -8,9 +8,14 @@ pipeline{
                 git 'https://github.com/someshalds/hello-world.git'
             }
          }
+         stage('maven build'){
+             steps{
+                 sh 'mvn package'
+             }
+         }
          stage('Create Dockerimage'){
              steps{
-                 sh 'docker build -t someshalds/someshdocker:latest .'
+                 sh 'docker build -t someshalds/someshalds4567 .'
              }
          }
      }

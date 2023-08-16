@@ -2,4 +2,4 @@
 From tomcat:8-jre8
 # Maintainer
 MAINTAINER "valaxytech@gmail.com"
-COPY ./subdirectory/webapp.war /usr/local/tomcat/webapps
+COPY /Downloads/webapp.war /usr/local/tomcat/webapps

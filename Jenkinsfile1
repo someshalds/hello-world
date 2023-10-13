@@ -4,26 +4,28 @@ pipeline
 
     stages 
     {
-        stage('Git Checkout') 
+        stage("Git Checkout") 
         {
             steps 
             {
                git credentialsId: 'my-pipeline', url: 'https://github.com/someshalds/hello-world.git'
             }
         }
-        stage('Test') 
+        stage("mvn clean Build") 
         {
             steps 
             {
-                echo 'Hello World'
+                sh "mvn clean pacakage"
+                sh "mv target/*.war target/myweb.war" 
             }
         }
         stage('Deploy') 
         {
             steps 
             {
-                echo 'Hello World'
-
+               sshagent(['tomcat-new']) {                                                                                                     
+               sh """"
+                    
             }
         }
     }

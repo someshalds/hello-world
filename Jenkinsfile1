@@ -4,11 +4,11 @@ pipeline
 
     stages 
     {
-        stage('Build') 
+        stage('Git Checkout') 
         {
             steps 
             {
-                echo 'Hello World'
+               git credentialsId: 'my-pipeline', url: 'https://github.com/someshalds/hello-world.git'
             }
         }
         stage('Test') 
